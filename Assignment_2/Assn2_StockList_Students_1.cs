@@ -364,6 +364,7 @@ namespace Assignment_2
 
 
             }
+        }
 
 
             //param   (StockList)listToMerge : second list to be merged 
