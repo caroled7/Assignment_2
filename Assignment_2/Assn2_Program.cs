@@ -8,7 +8,7 @@ namespace Assignment_2
 {
   class Program
   {
-    static void Main(string[] args)
+  //  static void Main(string[] args) // removed for testing
     {
       Stock stockOne = new Stock("GOOG", "Google", 1.2m, 6.27m);
       Stock stockTwo = new Stock("MSFT", "Microsoft", 5m, 111.2m);
@@ -59,8 +59,8 @@ namespace Assignment_2
       Console.WriteLine("Similarity Index for Client-1 and Clien-2 :" + client1.StockList.Similarity(client2.StockList));
 
       Console.WriteLine("**************************Client-1,Client -2 Merged Portfolio*****************************************");
-      StockList mergedPortfolio = client1.StockList.MergeList(client2.StockList);
-      mergedPortfolio.Print();
+   //  StockList mergedPortfolio = client1.StockList.MergeList(client2.StockList);
+    // mergedPortfolio.Print();
 
       Console.ReadLine();
     }
