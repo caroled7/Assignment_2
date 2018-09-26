@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,8 +14,34 @@ namespace Assignment_2
     {
       decimal value = 0.0m;
 
-      // write your implementation here
+            if (this.IsEmpty())
+            {
+                return value;
+            }
+            else
+            {
+                StockNode current = this.head;
+                StockNode previous = null;
+                decimal currentStockQty = (current.StockHolding).Holdings;
+                decimal currentStockPrice = (current.StockHolding).CurrentPrice;
 
+                if (current.Next == null)
+                {
+                    value = value + (currentStockQty * currentStockPrice);
+                }
+                else
+                {
+                    while (current.Next != null)
+                    {
+                        value = value + (currentStockQty * currentStockPrice);
+
+                        StockNode newNode = new StockNode();
+                        newNode.Next = current;
+                        previous.Next = newNode;
+                    }
+                }
+                
+            }
       return value;
     }
 
