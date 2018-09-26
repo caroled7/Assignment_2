@@ -38,11 +38,30 @@ namespace Assignment_2
                         StockNode newNode = new StockNode();
                         newNode.Next = current;
                         previous.Next = newNode;
+
+                        //  Chris:  I don't think you need to create previous
+                        //  because you don't need to manipulate node positions, just traverse
+                        // I think you should be good with current and current.next
+                        //  You can compare with professor's function for AddLast, 
+                        // the section titled  // traverse the list till the end
+                        // I have commented out code in Assn2_Program_test.cs file
+                        // so that it just shows portfolio value
+                        // you can run this file to test out your code
+                        // From what I can now see, 
+                        // we also need to update the PortfolioValue {get;set;} 
+                        // so that value can show after stock has been added.
+                        // Not sure how to do this just yet
+                        // I have added two console write lines below to help you 
+                        // track what you are doing and test out your results
+                        Console.WriteLine("Inner Loop value :" + value);
+
                     }
                 }
                 
             }
-      return value;
+
+            Console.WriteLine("Outer Loop value :" + value );
+            return value;
     }
 
     //param  (StockList) listToCompare     : StockList which has to compared for similarity index
