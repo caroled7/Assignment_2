@@ -18,6 +18,7 @@ namespace Assignment_2
         //summary      : checks if the list is empty
         //return       : true if list is empty, false otherwise
         //return type  : bool
+
         public bool IsEmpty()
         {
             if (this.head == null)
@@ -185,18 +186,18 @@ namespace Assignment_2
             StockNode prevNodeOne = null;
             StockNode currNodeOne = this.head;
 
-         //   Console.WriteLine("Node passed is Current Node One Stock is:" + currNodeOne.StockHolding.Name);
-         //   Console.WriteLine("Node Passed is Current Node One Stock value is:" + currNodeOne.StockHolding.Holdings);
+            //   Console.WriteLine("Node passed is Current Node One Stock is:" + currNodeOne.StockHolding.Name);
+            //   Console.WriteLine("Node Passed is Current Node One Stock value is:" + currNodeOne.StockHolding.Holdings);
 
             // traverse the list until we reach the node to swap
             while (currNodeOne != null && currNodeOne.StockHolding != nodeOne)
             {
                 prevNodeOne = currNodeOne;
                 currNodeOne = currNodeOne.Next;
-          //      Console.WriteLine("Previous Node One Stock is:" + prevNodeOne.StockHolding.Name);
-          //      Console.WriteLine("Previous Node One Stock value is:" + prevNodeOne.StockHolding.Holdings);
-          //      Console.WriteLine("Current Node One Stock is:" + currNodeOne.StockHolding.Name);
-          //      Console.WriteLine("Current Node One Stock value is:" + currNodeOne.StockHolding.Holdings);
+                //      Console.WriteLine("Previous Node One Stock is:" + prevNodeOne.StockHolding.Name);
+                //      Console.WriteLine("Previous Node One Stock value is:" + prevNodeOne.StockHolding.Holdings);
+                //      Console.WriteLine("Current Node One Stock is:" + currNodeOne.StockHolding.Name);
+                //      Console.WriteLine("Current Node One Stock value is:" + currNodeOne.StockHolding.Holdings);
 
             }
 
@@ -224,8 +225,8 @@ namespace Assignment_2
             currNodeOne.Next = currNodeTwo.Next;
             currNodeTwo.Next = temp;
 
-         //   Console.WriteLine("Node returned is Current Node Two Stock Returned is:" + currNodeTwo.StockHolding.Name);
-         //   Console.WriteLine("Node Returned is Current Node Two Stock Returned value is:" + currNodeTwo.StockHolding.Holdings);
+            //   Console.WriteLine("Node returned is Current Node Two Stock Returned is:" + currNodeTwo.StockHolding.Name);
+            //   Console.WriteLine("Node Returned is Current Node Two Stock Returned value is:" + currNodeTwo.StockHolding.Holdings);
 
 
 
@@ -234,12 +235,6 @@ namespace Assignment_2
 
 
         // FOR STUDENTS
-
-
-        
-
-
-
 
 
         //param        : NA
@@ -271,35 +266,35 @@ namespace Assignment_2
 
                 decimal currNumHoldings = currentNode.StockHolding.Holdings;
                 decimal nextNumHoldings = nextNode.StockHolding.Holdings;
-                decimal prevNumHoldings = 0 ;
-           
+                decimal prevNumHoldings = 0;
+
 
                 for (int i = 0; i < this.Length(); i++)
                 {
-                   currentNode = this.head;
-                   nextNode = currentNode.Next;
-                   previousNode = null;
+                    currentNode = this.head;
+                    nextNode = currentNode.Next;
+                    previousNode = null;
 
-                   currNumHoldings = currentNode.StockHolding.Holdings;
-                   nextNumHoldings = nextNode.StockHolding.Holdings;
-                   prevNumHoldings = 0;
+                    currNumHoldings = currentNode.StockHolding.Holdings;
+                    nextNumHoldings = nextNode.StockHolding.Holdings;
+                    prevNumHoldings = 0;
 
 
                     for (int j = 0; j < this.Length(); j++)
 
                     {
-                      //  Console.WriteLine("Loop i is:" + i);
-                     //   Console.WriteLine("Loop j is:" + j);
-                     //   Console.WriteLine("CurrentNumHoldings:" + currNumHoldings);
-                     //   Console.WriteLine("NextNumHoldings:" + nextNumHoldings);
+                        //  Console.WriteLine("Loop i is:" + i);
+                        //   Console.WriteLine("Loop j is:" + j);
+                        //   Console.WriteLine("CurrentNumHoldings:" + currNumHoldings);
+                        //   Console.WriteLine("NextNumHoldings:" + nextNumHoldings);
 
 
                         if (currNumHoldings < nextNumHoldings)  // swap
                         {
-                            Console.WriteLine("Logic 1");
+                         //   Console.WriteLine("Logic 1");
                             previousNode = currentNode;
                             prevNumHoldings = previousNode.StockHolding.Holdings;
-                            Console.WriteLine("Swapping:" + currentNode.StockHolding.Name);
+                         //   Console.WriteLine("Swapping:" + currentNode.StockHolding.Name);
 
 
                             currentNode = this.Swap(previousNode.StockHolding);
@@ -311,25 +306,25 @@ namespace Assignment_2
                         }
                         else   // no need to swap, just move on to next node
                         {
-                            Console.WriteLine("Logic 2");
+                         //   Console.WriteLine("Logic 2");
 
-                        
-                            if ((currentNode.Next != null) && (currentNode.Next.Next!=null))
+
+                            if ((currentNode.Next != null) && (currentNode.Next.Next != null))
                             {
-                                Console.WriteLine("Logic 3");
+                            //    Console.WriteLine("Logic 3");
                                 currentNode = currentNode.Next;
                                 currNumHoldings = currentNode.StockHolding.Holdings;
                                 nextNode = currentNode.Next;
                                 nextNumHoldings = nextNode.StockHolding.Holdings;
                             }
-            
-                        } 
 
-                       
+                        }
+
+
 
                     }
                 }
-                
+
 
 
 
@@ -343,10 +338,8 @@ namespace Assignment_2
         //return type  : NA
         //param        : NA
 
-        public void SortByName()
-
+        public void SortByName() // Carole
         {
-
 
             // if there is nothing in the list, stop.
             if (this.IsEmpty())
@@ -357,66 +350,87 @@ namespace Assignment_2
             // with every other item in the list 
             // based on bubble sort implementation of DSA guide - c sharp code download
             // grab first stock in stock list and next stock in list
-            // compare their names
-            // if first stock name greater than second stock, leave first stock in its place
-            // if first stock name less than second stock name, swap stocks
+            // compare their number of stocks
+            // if first stock greater than second stock, leave first stock in its place
+            // if first stock less than second stock, swap stocks
             else
             {
-                StockNode nodeReference = null;
-
                 StockNode currentNode = this.head;
                 StockNode nextNode = currentNode.Next;
+                StockNode previousNode = null;
+
 
                 String currStockName = currentNode.StockHolding.Name;
                 String nextStockName = nextNode.StockHolding.Name;
+                String prevStockName = "";
+
 
 
                 for (int i = 0; i < this.Length(); i++)
                 {
+                    currentNode = this.head;
+                    nextNode = currentNode.Next;
+                    previousNode = null;
+
+                    currStockName = currentNode.StockHolding.Name;
+                    nextStockName = nextNode.StockHolding.Name;
+                    prevStockName = "";
+
+
                     for (int j = 0; j < this.Length(); j++)
+
                     {
-                        // String.Compare (strA, str B)
-                        //  Less than zero	strA precedes strB in the sort order.
-                        // Zero strA occurs in the same position as strB in the sort order.
-                        //Greater than zero strA follows strB in the sort order.
-                        // String.Compare (currStockName, nextStockName) < 0  
-                        // already in right sort order, move on to next node
-                        // if  String.Compare (currStockName, nextStockName) < 0  
-                        // not in right sort order, need to swap
 
+                        if (String.Compare(currStockName, nextStockName) > 0)  // swap ascending
 
-
-
-                        if (String.Compare(currStockName, nextStockName) > 0)  // swap
                         {
-                            nodeReference = this.Swap(currentNode.StockHolding);
-                            currentNode = nodeReference;
+                        //    Console.WriteLine("Logic 1");
+                            previousNode = currentNode;
+                            prevStockName = previousNode.StockHolding.Name;
+                        //    Console.WriteLine("Swapping:" + currentNode.StockHolding.Name);
+
+
+                            currentNode = this.Swap(previousNode.StockHolding);
                             currStockName = currentNode.StockHolding.Name;
+
                             nextNode = currentNode.Next;
                             nextStockName = nextNode.StockHolding.Name;
-
 
                         }
-                        else // no need to swap, just move on to next node
+
+                        else   // no need to swap, just move on to next node
                         {
-                            currentNode = nextNode;
-                            currStockName = currentNode.StockHolding.Name;
-                            nextNode = currentNode.Next;
-                            nextStockName = nextNode.StockHolding.Name;
-                            nodeReference = null; // not sure if I need this 
+                          //  Console.WriteLine("Logic 2");
+
+
+                            if ((currentNode.Next != null) && (currentNode.Next.Next != null))
+                            {
+                             //   Console.WriteLine("Logic 3");
+                                currentNode = currentNode.Next;
+                                currStockName = currentNode.StockHolding.Name;
+                                nextNode = currentNode.Next;
+                                nextStockName = nextNode.StockHolding.Name;
+                            }
 
                         }
 
                     }
+
                 }
-
-
-
             }
+
+
+
         }
 
 
-        /*         //param   (StockList)listToMerge : second list to be merged 
+    
+
+
+
+   
+
+                //param   (StockList)listToMerge : second list to be merged 
                  //summary      : merge two different list into a single result list
                  //return       : merged list
                  //return type  : StockList
@@ -433,78 +447,31 @@ namespace Assignment_2
                  public StockList MergeList(StockList listToMerge)
                  {
 
-                     // write your implementation here
-                     StockList resultList = new StockList();
-                     resultlist = this; // set resultlist to current list
-                     resultlist.SortbyName();
+            
+                     this.SortByName();
+                     StockList resultList = this;
+                     
 
                      StockNode currentNode = listToMerge.head;
 
 
 
-                     for (int i = 0; i < listToMerge.Length()  ) //loop through list to merge
+                     for (int i = 0; i < listToMerge.Length(); i++ ) //loop through list to merge
                      {
-                         this.AddStock(currentNode.Stock);
+                         this.AddStock(currentNode.StockHolding);
                          currentNode = currentNode.Next;
                      }
 
 
                      return resultList;
                  }
-             }*/
+             
 
 
-        public int Length()
-        {
-            int counter = 0;
-
-
-            if (this.IsEmpty() == true)
-            {
-                counter = 0;
-            }
-            else
-            {
-                StockNode current = this.head;
-
-                counter = 1;
-
-                while (current.Next != null)
-                {
-                    current = current.Next;
-                    counter = counter + 1;
-                }
-            }
-       //     Console.WriteLine("Length of Stocklist is:" + counter);
-            return counter;
-        }
-
-
-
-        //param        : NA
-        //summary      : Print all the nodes present in the list
-        //return       : NA
-        //return type  : NA
-          public void Print()
-          {
-            if (this.IsEmpty())
-                Console.WriteLine("Stocklist is empty");
-            else
-      {
-        // traverse the list till the end
-                StockNode current = this.head;
-                Console.WriteLine("Current Node is " + current.StockHolding.Name + " with value of " + current.StockHolding.Holdings);
-                while (current.Next != null)
-                {
-                    current = current.Next;
-                    Console.WriteLine("Next Node is " + current.StockHolding.Name + " with value of " + current.StockHolding.Holdings);
-
-                }
-        // point the last node to the new node
        
-      }
 
-          } 
+
+ 
 
     }
 }
