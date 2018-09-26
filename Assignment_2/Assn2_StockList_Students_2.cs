@@ -17,6 +17,7 @@ namespace Assignment_2
       Stock mostShareStock = null;
 
       // write your implementation here
+      // idea = use sort by value, then retrieve first stock in list
 
       return mostShareStock;
     }

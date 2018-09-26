@@ -19,7 +19,7 @@ namespace Assignment_2
       return value;
     }
 
-    //param  (StockList) listToCompare     : StockList which has to comared for similarity index
+    //param  (StockList) listToCompare     : StockList which has to compared for similarity index
     //summary      : finds the similar number of nodes between two lists
     //return       : similarty index
     //return type  : int
@@ -28,6 +28,8 @@ namespace Assignment_2
       int similarityIndex = 0;
 
       // write your implementation here
+      // look at compare to function professor uses
+      // do a counter - if similar, increment, if not similar do not increment, return number that are similar?
 
       return similarityIndex;
     }
