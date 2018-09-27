@@ -54,6 +54,10 @@ namespace Assignment_2
                         // I have added two console write lines below to help you 
                         // track what you are doing and test out your results
                         Console.WriteLine("Inner Loop value :" + value);
+                      
+                      //I think you may need to also put Console.ReadLine()
+                      //this can help have the result show up on your screen
+                      //Carole might need to correct me but i beleive that is what she showed me
 
                     }
                 }
