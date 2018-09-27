@@ -7,8 +7,7 @@ namespace Assignment_2
   public class ClientPortfolio
   {
     public StockList StockList { get; set; }
-
-    public decimal PortfolioValue { get; set; }
+    public decimal PortfolioValue;
     public string HolderName { get; set; }
     public string HolderAddress { get; set; }
     public string ContactNumber { get; set; }
@@ -30,6 +29,11 @@ namespace Assignment_2
       HolderName = holderName;
       HolderAddress = holderAddress;
       ContactNumber = contactNumber;
+    }
+
+    public decimal GetPortfolioValue()
+    {
+      return this.StockList.Value();
     }
   }
 }
