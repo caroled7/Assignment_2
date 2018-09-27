@@ -1,4 +1,6 @@
-﻿using System;
+﻿// adding comment to show how to commit and synch one file from your laptop
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
