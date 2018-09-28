@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Assignment_2
+{
+  public partial class StockList
+  {
+
+
+
+    //param        : NA
+    //summary      : Print all the nodes present in the list
+    //return       : NA
+    //return type  : NA
+    public void Print()
+    {
+            StockNode current = this.head;
+            while (current != null)
+            {
+                Console.WriteLine(current + "; ");
+                current = current.Next;
+            }
+
+        }
+  }
+}
