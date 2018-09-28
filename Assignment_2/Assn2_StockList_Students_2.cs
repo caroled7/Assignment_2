@@ -37,25 +37,40 @@ namespace Assignment_2
             else
             {
                 StockNode current = this.head;
-                StockNode previous = null;
+             //   StockNode previous = null; // no need for previous
 
-                if (current.Next == null)
+                if (current.Next == null) // good, this situation will only happen if there is one item in list
                 {
                     length = 1;
                 }
                 else
                 {
+                    length = 1; // if you don't start with 1 here, you will be short one item
+
                     while (current.Next != null)
                     {
                         length++;
 
-                        previous = current;
+                     //   previous = current; // no need for previous
                         current = current.Next;
+
+                     
                     }
-                    length = length + 1;
+                    length = length + 1; // this is the same as length ++, it works here, I just find it easier to be consistent;
                 }
             }
             return length;
     }
-  }
+
+        //param        : NA
+        //summary      : Print all the nodes present in the list
+        //return       : NA
+        //return type  : NA
+        public void Print()
+        {
+            // write your implementation here
+
+        }
+
+    }
 }
