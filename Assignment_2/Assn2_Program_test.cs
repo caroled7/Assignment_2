@@ -36,7 +36,8 @@ namespace Assignment_2
             //         Console.WriteLine("Before Sort by Value");
             //          client1.StockList.Print();
             //   Console.WriteLine("Number of shares :" + client1.StockList.Length());
-            Console.WriteLine("Number of shares :" + client1.StockList.Value());
+            Console.WriteLine("Value of shares :" + client1.StockList.Value());
+          Console.WriteLine("Number of shares :" + client1.StockList.Length());
       //      Console.WriteLine("Current value of protfolio for client 1 :" + client1.PortfolioValue);
     //  Console.WriteLine("Stock with most shares for client 1:" + client1.StockList.MostShares());
    // client1.StockList.SortByValue();
@@ -54,6 +55,8 @@ namespace Assignment_2
       //        client2.StockList.AddStock(stockEight);
 
            //   client2.StockList.Print();
+          Console.WriteLine("Value of shares :" + client1.StockList.Value());
+          Console.WriteLine("Number of shares :" + client1.StockList.Length());
            //   Console.WriteLine("Number of shares :" + client2.StockList.Length());
   //            Console.WriteLine("Current value of protfolio for client 2 :" + client2.PortfolioValue);
     //          Console.WriteLine("Stock with most shares for client 2 :" + client2.StockList.MostShares());
