@@ -22,13 +22,13 @@ namespace Assignment_2
             { StockNode current = this.head;
             while(current != null)
                 { length = length++;
-                    current = current.Next;
+                    current = current.Next; // I belive you will be short 1 because length starting value is zero
                 }
             }
 
       return length;
-            Console.WriteLine(length);
-            Console.ReadLine();
+            Console.WriteLine(length); // this code need to be before return - because return is like exit, it will not execute anything after
+            Console.ReadLine(); // you are best off using readline in program test file - 
             
     }
   }
