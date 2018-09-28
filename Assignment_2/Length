@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Assignment_2
+{
+  public partial class StockList
+  {
+    //param        : NA
+    //summary      : finds the number of nodes present in the list
+    //return       : length of list
+    //return type  : int
+    public int Length()
+    {
+      int length = 0;
+
+      // run loop to check each node
+
+            if(this.IsEmpty())
+            { return length; }
+            else
+            { StockNode current = this.head;
+            while(current != null)
+                { length = length++;
+                    current = current.Next;
+                }
+            }
+
+      return length;
+            Console.WriteLine(length);
+            Console.ReadLine();
+            
+    }
+  }
+}
