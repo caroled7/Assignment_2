@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Assignment_2
+{
+  public partial class StockList
+  {
+    //param        : NA
+    //summary      : finds the number of nodes present in the list
+    //return       : length of list
+    //return type  : int
+    public int Length()
+    {
+      int length = 0;
+
+      // run loop to check each node
+
+            if(this.IsEmpty())
+            { return length; }
+            else
+            { StockNode current = this.head;
+            while(current != null)
+                { length = length++;
+                    current = current.Next; // I belive you will be short 1 because length starting value is zero
+                }
+            }
+
+      return length;
+            Console.WriteLine(length); // this code need to be before return - because return is like exit, it will not execute anything after
+            Console.ReadLine(); // you are best off using readline in program test file - 
+            
+    }
+  }
+}
