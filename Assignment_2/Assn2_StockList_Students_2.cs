@@ -26,13 +26,36 @@ namespace Assignment_2
     //summary      : finds the number of nodes present in the list
     //return       : length of list
     //return type  : int
-   /* public int Length()
+   public int Length()
     {
       int length = 0;
 
-      // write your implementation here
+            if (this.IsEmpty())
+            {
+                return length;
+            }
+            else
+            {
+                StockNode current = this.head;
+                StockNode previous = null;
 
-      return length;
-    }*/
+                if (current.Next == null)
+                {
+                    length = 1;
+                }
+                else
+                {
+                    while (current.Next != null)
+                    {
+                        length++;
+
+                        previous = current;
+                        current = current.Next;
+                    }
+                    length = length + 1;
+                }
+            }
+            return length;
+    }
   }
 }
