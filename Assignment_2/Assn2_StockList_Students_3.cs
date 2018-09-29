@@ -64,7 +64,7 @@ namespace Assignment_2
     //summary      : finds the similar number of nodes between two lists
     //return       : similarty index
     //return type  : int
-    public int Similarity(StockList listToCompare)
+            public int Similarity(StockList listToCompare)
         {
             int similarityIndex = 0;
             StockNode listToCompareCurrent = listToCompare.head;
@@ -102,15 +102,37 @@ namespace Assignment_2
                 } return similarityIndex;
             }
         }
+        //param        : NA
+        //summary      : Print all the nodes present in the list
+        //return       : NA
+        //return type  : NA
+        public void Print()
+        {
+            if (this.IsEmpty())
+            {
+                Console.WriteLine("There is nothing to print.");
+                Console.ReadLine();
+            }
+            else
+            {
+                StockNode current = this.head;
+                StockNode previous = null;
 
-    //param        : NA
-    //summary      : Print all the nodes present in the list
-    //return       : NA
-    //return type  : NA
-  /*  public void Print()
-    {
-      // write your implementation here
+                while (current.Next != null)
+                {
+                    Console.WriteLine("Stock Symbol: " + current.StockHolding.Symbol + "       " + "Stock Name: " +
+                        current.StockHolding.Name + "       " + "Stock Holdings: " + current.StockHolding.Holdings + "       " +
+                        "Current Price: " + current.StockHolding.CurrentPrice);
 
-    } */
-  }
+                    previous = current;
+                    current = current.Next;
+                }
+
+                Console.WriteLine("Stock Symbol: " + current.StockHolding.Symbol + "       " + "Stock Name: " +
+                        current.StockHolding.Name + "       " + "Stock Holdings: " + current.StockHolding.Holdings + "       " +
+                        "Current Price: " + current.StockHolding.CurrentPrice);
+            }
+
+        }
+    }
 }
