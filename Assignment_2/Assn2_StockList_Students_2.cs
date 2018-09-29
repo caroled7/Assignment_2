@@ -4,15 +4,15 @@ using System.Text;
 
 namespace Assignment_2
 {
-  public partial class StockList
-  {
+    public partial class StockList
+    {
 
 
         //param        : NA
         //summary      : finds the stock with most number of holdings
         //return       : stock with most shares
         //return type  : Stock
-        public Stock MostShares()
+    /*    public Stock MostShares()
         {
             Stock mostShareStock = null;
 
@@ -23,7 +23,7 @@ namespace Assignment_2
              5. make stock one the one with largest holdings
              6. repeat 2-5 until at end of list*/
 
-            StockNode current = this.head;
+       /*     StockNode current = this.head;
             Stock stockOne = current.StockHolding.Name; // you are trying to assign object of type Stock to a string(name)
             // you either want to create a string to keep the name object
             // or better yet assign do  Stock stockOne = current.Stockholding
@@ -81,19 +81,22 @@ namespace Assignment_2
                 }
                 mostShareStock = stockOne;
             }
-            return mostShareStock;
-        }
-    }
-}
+            return mostShareStock;   
+    
+        }*/
 
 
-//param        : NA
-//summary      : finds the number of nodes present in the list
-//return       : length of list
-//return type  : int
-public int Length()
-    {
-      int length = 0;
+
+
+        //param        : NA
+        //summary      : finds the number of nodes present in the list
+        //return       : length of list
+        //return type  : int
+        public int Length()
+        {
+
+           
+            int length = 0;
 
             if (this.IsEmpty())
             {
@@ -101,8 +104,8 @@ public int Length()
             }
             else
             {
-                StockNode current = this.head;
-             //   StockNode previous = null; // no need for previous
+                 StockNode current = this.head;
+                //   StockNode previous = null; // no need for previous
 
                 if (current.Next == null) // good, this situation will only happen if there is one item in list
                 {
@@ -110,22 +113,26 @@ public int Length()
                 }
                 else
                 {
-                    length = 1; // if you don't start with 1 here, you will be short one item
-
+                   
                     while (current.Next != null)
                     {
                         length++;
 
-                     //   previous = current; // no need for previous
+                        //   previous = current; // no need for previous
                         current = current.Next;
 
-                     
+
                     }
                     length = length + 1; // this is the same as length ++, it works here, I just find it easier to be consistent;
                 }
             }
             return length;
-    }
+        }
+
+        //param        : NA
+        //summary      : Print all the nodes present in the list
+        //return       : NA
+        //return type  : NA
 
         //param        : NA
         //summary      : Print all the nodes present in the list
@@ -133,9 +140,16 @@ public int Length()
         //return type  : NA
         public void Print()
         {
-            // write your implementation here
+            StockNode current = this.head;
+            while (current != null)
+            {
+                Console.WriteLine(current + "; "); // very close --you will need to call stock name
+                current = current.Next;
+            }
 
         }
+
+
 
     }
 }

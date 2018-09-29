@@ -34,8 +34,8 @@ namespace Assignment_2
 
       Console.WriteLine("**************************Client-1 Portfolio*****************************************");
             //         Console.WriteLine("Before Sort by Value");
-            //          client1.StockList.Print();
-               Console.WriteLine("Number of shares :" + client1.StockList.Length());
+                   client1.StockList.Print();
+              Console.WriteLine("Number of shares :" + client1.StockList.Length());
      //       Console.WriteLine("Value of shares :" + client1.StockList.Value());
      //     Console.WriteLine("Number of shares :" + client1.StockList.Length());
     //       Console.WriteLine("Current value of protfolio for client 1 :" + client1.PortfolioValue);
