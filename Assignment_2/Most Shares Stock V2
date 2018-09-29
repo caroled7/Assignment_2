@@ -78,3 +78,32 @@ namespace Assignment_2
 
   }
 }
+
+
+//Dom: Try this.
+
+public Stock MostShares()
+        {
+            StockNode current = this.head;
+            Stock mostShareStock = current.StockHolding;
+            if (this.IsEmpty())
+            {
+                return mostShareStock;
+            }
+            else
+            {
+                while (current.Next != null)
+                {
+                    if (current.Next.StockHolding.Holdings > mostShareStock.Holdings)
+                    {
+                        mostShareStock = current.Next.StockHolding;
+                        current = current.Next;
+                    }
+                    else
+                    {
+                        current = current.Next;
+                    }
+                }
+            }
+            return mostShareStock;
+        }
