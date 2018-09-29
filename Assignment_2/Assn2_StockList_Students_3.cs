@@ -59,29 +59,49 @@ namespace Assignment_2
                       //this can help have the result show up on your screen
                       //Carole might need to correct me but i beleive that is what she showed me
 
-                    }
-                }
-                
-            }
-
-            Console.WriteLine("Outer Loop value :" + value );
-            return value;
-    }
 
     //param  (StockList) listToCompare     : StockList which has to compared for similarity index
     //summary      : finds the similar number of nodes between two lists
     //return       : similarty index
     //return type  : int
     public int Similarity(StockList listToCompare)
-    {
-      int similarityIndex = 0;
+        {
+            int similarityIndex = 0;
+            StockNode listToCompareCurrent = listToCompare.head;
+            StockNode listToComparePrevious = null;
+            StockNode thisListCurrent = this.head;
+            StockNode thisListPrevious = null;
 
-      // write your implementation here
-      // look at compare to function professor uses
-      // do a counter - if similar, increment, if not similar do not increment, return number that are similar?
+            if (listToCompare.IsEmpty() || this.IsEmpty())
+            {
+                return similarityIndex;
+            }
+            else
+            {
+                while (thisListCurrent != null)
+                {
+                    while (listToCompareCurrent != null)
+                    {
+                        if (thisListCurrent.StockHolding.Symbol == listToCompareCurrent.StockHolding.Symbol)
+                        {
+                            similarityIndex++;
 
-      return similarityIndex;
-    }
+                            listToComparePrevious = listToCompareCurrent;
+                            listToCompareCurrent = listToCompareCurrent.Next;
+                        }
+                        else
+                        {
+                            listToComparePrevious = listToCompareCurrent;
+                            listToCompareCurrent = listToCompareCurrent.Next;
+                        }
+                    }
+                    listToCompareCurrent = listToCompare.head;
+                    listToComparePrevious = null;
+                    thisListPrevious = thisListCurrent;
+                    thisListCurrent = thisListCurrent.Next;
+                } return similarityIndex;
+            }
+        }
 
     //param        : NA
     //summary      : Print all the nodes present in the list
