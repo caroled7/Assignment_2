@@ -11,8 +11,8 @@ namespace Assignment_2
     //return       : total value
     //return type  : decimal
     public decimal Value()
-    {
-      decimal value = 0.0m;
+        {
+            decimal value = 0.0m;
 
             if (this.IsEmpty())
             {
@@ -21,24 +21,24 @@ namespace Assignment_2
             else
             {
                 StockNode current = this.head;
-                StockNode previous = null;
-                decimal currentStockQty = (current.StockHolding).Holdings;
-                decimal currentStockPrice = (current.StockHolding).CurrentPrice;
+                decimal currentStockQty = current.StockHolding.Holdings;
+                decimal currentStockPrice = current.StockHolding.CurrentPrice;
 
-                if (current.Next == null)
+                while (current.Next != null)
                 {
                     value = value + (currentStockQty * currentStockPrice);
+
+                    current = current.Next;
+                    currentStockQty = current.StockHolding.Holdings;
+                    currentStockPrice = current.StockHolding.CurrentPrice;
                 }
-                else
-                {
-                    while (current.Next != null)
-                    {
-                        value = value + (currentStockQty * currentStockPrice);
+            }   return value;
+        }
 
-                        StockNode newNode = new StockNode();
-                        newNode.Next = current;
-                        previous.Next = newNode;
-
+                        // Dom: Ok. I changed the code and ran this through it's paces against the program.
+                        // I removed the previous node and added a reset of the currentStockQty
+                        // and currentStockPrice so that those variables update with new nodes. 
+                        
                         //  Chris:  I don't think you need to create previous
                         //  because you don't need to manipulate node positions, just traverse
                         // I think you should be good with current and current.next
