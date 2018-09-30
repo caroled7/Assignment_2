@@ -12,7 +12,7 @@ namespace Assignment_2
         //summary      : finds the stock with most number of holdings
         //return       : stock with most shares
         //return type  : Stock
-    /*    public Stock MostShares()
+      public Stock MostShares()
         {
             Stock mostShareStock = null;
 
@@ -23,7 +23,7 @@ namespace Assignment_2
              5. make stock one the one with largest holdings
              6. repeat 2-5 until at end of list*/
 
-       /*     StockNode current = this.head;
+            StockNode current = this.head;
             Stock stockOne = current.StockHolding.Name; // you are trying to assign object of type Stock to a string(name)
             // you either want to create a string to keep the name object
             // or better yet assign do  Stock stockOne = current.Stockholding
@@ -83,7 +83,7 @@ namespace Assignment_2
             }
             return mostShareStock;   
     
-        }*/
+        }
 
 
 
@@ -129,7 +129,7 @@ namespace Assignment_2
             return length;
         }
 
-        //param        : NA
+   /*     //param        : NA
         //summary      : Print all the nodes present in the list
         //return       : NA
         //return type  : NA
@@ -147,9 +147,9 @@ namespace Assignment_2
                 current = current.Next;
             }
 
-        }
+        }*/
 
 
 
-    }
+    } 
 }

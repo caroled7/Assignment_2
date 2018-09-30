@@ -17,38 +17,38 @@ namespace Assignment_2
       Stock stockNine = new Stock("GOOG", "Google", 1.2m, 6.27m);
 
       ClientPortfolio client1 = new ClientPortfolio("Andrew", "Mountain View", "555-111-9070");
-      client1.StockList.AddStock(stockOne);
-      client1.StockList.AddStock(stockTwo);
-      client1.StockList.AddStock(stockThree);
-      client1.StockList.AddStock(stockFour);
-      client1.StockList.AddStock(stockNine);
+      client1.StockList.AddStock(stockOne); // GOOG
+      client1.StockList.AddStock(stockTwo); // MSFT
+      client1.StockList.AddStock(stockThree); // AAPL
+      client1.StockList.AddStock(stockFour); // AMZN
+      client1.StockList.AddStock(stockNine); //GOOG
 
       Console.WriteLine("**************************Client-1 Portfolio*****************************************");
-      client1.StockList.Print();
-      Console.WriteLine("Number of shares :" + client1.StockList.Length());
-      Console.WriteLine("Current value of portfolio for client 1 :" + client1.GetPortfolioValue());
-      Console.WriteLine("Stock with most shares for client 1:" + client1.StockList.MostShares());
-      client1.StockList.SortByValue();
-      Console.WriteLine("Portfolio sorted in descending order by number of holdings for client 1:");
-      client1.StockList.Print();
+      client1.StockList.Print();// Good
+      Console.WriteLine("Number of shares :" + client1.StockList.Length());// good
+      Console.WriteLine("Current value of portfolio for client 1 :" + client1.GetPortfolioValue()); // short 1 value
+    //  Console.WriteLine("Stock with most shares for client 1:" + client1.StockList.MostShares());
+      client1.StockList.SortByValue();//good
+      Console.WriteLine("Portfolio sorted in descending order by number of holdings for client 1:");//good
+      client1.StockList.Print();//good
 
 
       Console.WriteLine("**************************Client-2 Portfolio*****************************************");
       ClientPortfolio client2 = new ClientPortfolio("Chris", "New York", "435-111-000");
-      client2.StockList.AddStock(stockFive);
-      client2.StockList.AddStock(stockSix);
-      client2.StockList.AddStock(stockSeven);
-      client2.StockList.AddStock(stockEight);
+      client2.StockList.AddStock(stockFive); // Z
+      client2.StockList.AddStock(stockSix); //B
+      client2.StockList.AddStock(stockSeven); // GOOG
+      client2.StockList.AddStock(stockEight); //AAPL
 
-      client2.StockList.Print();
-      Console.WriteLine("Number of shares :" + client2.StockList.Length());
+      client2.StockList.Print();//good
+      Console.WriteLine("Number of shares :" + client2.StockList.Length());// good
       Console.WriteLine("Current value of portfolio for client 2 :" + client2.GetPortfolioValue());
-      Console.WriteLine("Stock with most shares for client 2 :" + client2.StockList.MostShares());
+   //   Console.WriteLine("Stock with most shares for client 2 :" + client2.StockList.MostShares());
       client2.StockList.SortByValue();
       Console.WriteLine("Portfolio sorted in descending order by number of holdings for client 2:");
       client2.StockList.Print();
       client2.StockList.SortByName();
-      Console.WriteLine("Portfolio sorted in alphabatical order for client 2:");
+      Console.WriteLine("Portfolio sorted in alphabetical order for client 2:");
       client2.StockList.Print();
       Console.WriteLine();
 

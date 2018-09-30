@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,7 +33,7 @@ namespace Assignment_2
       client1.StockList.AddStock(stockNine);//Goog
 
       Console.WriteLine("**************************Client-1 Portfolio*****************************************");
-            ClientPortfolio client1 = new ClientPortfolio("Andrew", "Mountain View", "555-111-9070");
+            ClientPortfolio client3 = new ClientPortfolio("Philipp", "Mountain View", "777-111-9080");
             client1.StockList.AddStock(stockOne);//Goog
             client1.StockList.AddStock(stockTwo); // Micro
             client1.StockList.AddStock(stockThree); // Apple
@@ -44,7 +44,7 @@ namespace Assignment_2
             Console.WriteLine(" ");
             Console.WriteLine("Value of shares: " + client1.StockList.Value());
             Console.WriteLine("Number of shares: " + client1.StockList.Length());
-            Console.WriteLine("Stock with most shares: " + client1.StockList.MostShares());
+         //   Console.WriteLine("Stock with most shares: " + client1.StockList.MostShares());
             Console.WriteLine(" ");
 
             Console.WriteLine("**************************Client-2 Portfolio*****************************************");
@@ -59,19 +59,20 @@ namespace Assignment_2
             Console.WriteLine("Value of shares: " + client2.StockList.Value());
             Console.WriteLine("Number of shares: " + client2.StockList.Length());
             Console.WriteLine("Similarity Index for Client 1 and Client 2: " + client2.StockList.Similarity(client1.StockList));
-            Console.WriteLine("Stock with most shares: " + client2.StockList.MostShares());
-            //         Console.WriteLine("Portfolio sorted in descending order by number of holdings for client 2:");
-            //          client2.StockList.Print();
-            //         client2.StockList.SortByName();
-            //          Console.WriteLine("Portfolio sorted in alphabatical order for client 2:");
-            //           client2.StockList.Print();
-            //           Console.WriteLine();
+          //  Console.WriteLine("Stock with most shares: " + client2.StockList.MostShares());
+                     Console.WriteLine("Portfolio sorted in descending order by number of holdings for client 2:");
+                      client2.StockList.Print();
+                    client2.StockList.SortByName();
+                     Console.WriteLine("Portfolio sorted in alphabatical order for client 2:");
+                      client2.StockList.Print();
+                       Console.WriteLine();
 
-            //          Console.WriteLine("**************************Client-1,Client -2 Merged Portfolio*****************************************");
-            //         StockList mergedPortfolio = client1.StockList.MergeList(client2.StockList);
-            //        mergedPortfolio.Print();
+                     Console.WriteLine("**************************Client-1,Client -2 Merged Portfolio*****************************************");
+                    StockList mergedPortfolio = client1.StockList.MergeList(client2.StockList);
+                    mergedPortfolio.Print();
 
             Console.ReadLine();
         }
     }
 }
+*/
