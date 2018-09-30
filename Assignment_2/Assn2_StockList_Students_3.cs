@@ -32,6 +32,7 @@ namespace Assignment_2
                     currentStockQty = current.StockHolding.Holdings;
                     currentStockPrice = current.StockHolding.CurrentPrice;
                 }
+                value = value + (currentStockQty * currentStockPrice);
             }   return value;
         }
 
