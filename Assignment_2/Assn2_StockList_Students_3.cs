@@ -11,8 +11,8 @@ namespace Assignment_2
     //return       : total value
     //return type  : decimal
     public decimal Value()
-    {
-      decimal value = 0.0m;
+        {
+            decimal value = 0.0m;
 
             if (this.IsEmpty())
             {
@@ -21,24 +21,24 @@ namespace Assignment_2
             else
             {
                 StockNode current = this.head;
-                StockNode previous = null;
-                decimal currentStockQty = (current.StockHolding).Holdings;
-                decimal currentStockPrice = (current.StockHolding).CurrentPrice;
+                decimal currentStockQty = current.StockHolding.Holdings;
+                decimal currentStockPrice = current.StockHolding.CurrentPrice;
 
-                if (current.Next == null)
+                while (current.Next != null)
                 {
                     value = value + (currentStockQty * currentStockPrice);
+
+                    current = current.Next;
+                    currentStockQty = current.StockHolding.Holdings;
+                    currentStockPrice = current.StockHolding.CurrentPrice;
                 }
-                else
-                {
-                    while (current.Next != null)
-                    {
-                        value = value + (currentStockQty * currentStockPrice);
+            }   return value;
+        }
 
-                        StockNode newNode = new StockNode();
-                        newNode.Next = current;
-                        previous.Next = newNode;
-
+                        // Dom: Ok. I changed the code and ran this through it's paces against the program.
+                        // I removed the previous node and added a reset of the currentStockQty
+                        // and currentStockPrice so that those variables update with new nodes. 
+                        
                         //  Chris:  I don't think you need to create previous
                         //  because you don't need to manipulate node positions, just traverse
                         // I think you should be good with current and current.next
@@ -59,38 +59,80 @@ namespace Assignment_2
                       //this can help have the result show up on your screen
                       //Carole might need to correct me but i beleive that is what she showed me
 
-                    }
-                }
-                
-            }
-
-            Console.WriteLine("Outer Loop value :" + value );
-            return value;
-    }
 
     //param  (StockList) listToCompare     : StockList which has to compared for similarity index
     //summary      : finds the similar number of nodes between two lists
     //return       : similarty index
     //return type  : int
-    public int Similarity(StockList listToCompare)
-    {
-      int similarityIndex = 0;
+            public int Similarity(StockList listToCompare)
+        {
+            int similarityIndex = 0;
+            StockNode listToCompareCurrent = listToCompare.head;
+            StockNode listToComparePrevious = null;
+            StockNode thisListCurrent = this.head;
+            StockNode thisListPrevious = null;
 
-      // write your implementation here
-      // look at compare to function professor uses
-      // do a counter - if similar, increment, if not similar do not increment, return number that are similar?
+            if (listToCompare.IsEmpty() || this.IsEmpty())
+            {
+                return similarityIndex;
+            }
+            else
+            {
+                while (thisListCurrent != null)
+                {
+                    while (listToCompareCurrent != null)
+                    {
+                        if (thisListCurrent.StockHolding.Symbol == listToCompareCurrent.StockHolding.Symbol)
+                        {
+                            similarityIndex++;
 
-      return similarityIndex;
+                            listToComparePrevious = listToCompareCurrent;
+                            listToCompareCurrent = listToCompareCurrent.Next;
+                        }
+                        else
+                        {
+                            listToComparePrevious = listToCompareCurrent;
+                            listToCompareCurrent = listToCompareCurrent.Next;
+                        }
+                    }
+                    listToCompareCurrent = listToCompare.head;
+                    listToComparePrevious = null;
+                    thisListPrevious = thisListCurrent;
+                    thisListCurrent = thisListCurrent.Next;
+                } return similarityIndex;
+            }
+        }
+        //param        : NA
+        //summary      : Print all the nodes present in the list
+        //return       : NA
+        //return type  : NA
+        public void Print()
+        {
+            if (this.IsEmpty())
+            {
+                Console.WriteLine("There is nothing to print.");
+                Console.ReadLine();
+            }
+            else
+            {
+                StockNode current = this.head;
+                StockNode previous = null;
+
+                while (current.Next != null)
+                {
+                    Console.WriteLine("Stock Symbol: " + current.StockHolding.Symbol + "       " + "Stock Name: " +
+                        current.StockHolding.Name + "       " + "Stock Holdings: " + current.StockHolding.Holdings + "       " +
+                        "Current Price: " + current.StockHolding.CurrentPrice);
+
+                    previous = current;
+                    current = current.Next;
+                }
+
+                Console.WriteLine("Stock Symbol: " + current.StockHolding.Symbol + "       " + "Stock Name: " +
+                        current.StockHolding.Name + "       " + "Stock Holdings: " + current.StockHolding.Holdings + "       " +
+                        "Current Price: " + current.StockHolding.CurrentPrice);
+            }
+
+        }
     }
-
-    //param        : NA
-    //summary      : Print all the nodes present in the list
-    //return       : NA
-    //return type  : NA
-  /*  public void Print()
-    {
-      // write your implementation here
-
-    } */
-  }
 }
