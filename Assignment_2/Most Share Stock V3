@@ -11,7 +11,7 @@ namespace Assignment_2
     //summary      : finds the stock with most number of holdings
     //return       : stock with most shares
     //return type  : Stock
-    public Stock MostShares()
+    public string MostShares()
     {
       string mostShareStock = null;
 
