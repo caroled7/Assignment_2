@@ -24,11 +24,11 @@ namespace Assignment_2
       client1.StockList.AddStock(stockNine); //GOOG
 
       Console.WriteLine("**************************Client-1 Portfolio*****************************************");
-      client1.StockList.Print();// Good
-      Console.WriteLine("Number of shares :" + client1.StockList.Length());// good
+      client1.StockList.Print();// Good +
+      Console.WriteLine("Number of shares :" + client1.StockList.Length());// good +
       Console.WriteLine("Current value of portfolio for client 1 :" + client1.GetPortfolioValue()); // short 1 value
-    //  Console.WriteLine("Stock with most shares for client 1:" + client1.StockList.MostShares());
-      client1.StockList.SortByValue();//good
+     Console.WriteLine("Stock with most shares for client 1:" + client1.StockList.MostShares());
+     client1.StockList.SortByValue();//good
       Console.WriteLine("Portfolio sorted in descending order by number of holdings for client 1:");//good
       client1.StockList.Print();//good
 
@@ -43,7 +43,7 @@ namespace Assignment_2
       client2.StockList.Print();//good
       Console.WriteLine("Number of shares :" + client2.StockList.Length());// good
       Console.WriteLine("Current value of portfolio for client 2 :" + client2.GetPortfolioValue());
-   //   Console.WriteLine("Stock with most shares for client 2 :" + client2.StockList.MostShares());
+      Console.WriteLine("Stock with most shares for client 2 :" + client2.StockList.MostShares());
       client2.StockList.SortByValue();
       Console.WriteLine("Portfolio sorted in descending order by number of holdings for client 2:");
       client2.StockList.Print();
@@ -52,7 +52,7 @@ namespace Assignment_2
       client2.StockList.Print();
       Console.WriteLine();
 
-      Console.WriteLine("Similarity Index for Client-1 and Clien-2 :" + client1.StockList.Similarity(client2.StockList));
+      Console.WriteLine("Similarity Index for Client-1 and Client-2 :" + client1.StockList.Similarity(client2.StockList));
 
       Console.WriteLine("**************************Client-1,Client -2 Merged Portfolio*****************************************");
       StockList mergedPortfolio = client1.StockList.MergeList(client2.StockList);
